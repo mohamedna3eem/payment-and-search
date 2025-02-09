@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
-import 'package:pharma_now/features/splash/presentation/views/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:pharma_now/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -11,11 +11,21 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
+  double _opacity = 0.0;
+
   @override
   void initState() {
-    // TODO: implement initState
-    excuteNavigation();
     super.initState();
+    _startAnimation();
+    excuteNavigation();
+  }
+
+  void _startAnimation() {
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _opacity = 1.0;
+      });
+    });
   }
 
   @override
@@ -24,14 +34,18 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SvgPicture.asset(Assets.SplashViewImage),
+        AnimatedOpacity(
+          opacity: _opacity,
+          duration: const Duration(seconds: 2),
+          child: SvgPicture.asset(Assets.SplashViewImage),
+        ),
       ],
     );
   }
 
   void excuteNavigation() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnBoardingView.routName);
+      Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
     });
   }
 }
