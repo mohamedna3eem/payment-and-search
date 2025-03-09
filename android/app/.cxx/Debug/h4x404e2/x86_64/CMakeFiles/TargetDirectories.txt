@@ -1,0 +1,2 @@
+D:/FlutterProjects/pharma_now/android/app/.cxx/Debug/h4x404e2/x86_64/CMakeFiles/edit_cache.dir
+D:/FlutterProjects/pharma_now/android/app/.cxx/Debug/h4x404e2/x86_64/CMakeFiles/rebuild_cache.dir

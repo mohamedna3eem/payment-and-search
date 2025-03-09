@@ -1,33 +1,36 @@
-// ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
 
-  /// Assets for assetsImagesAppIcon
-  /// assets/images/appIcon.png
-  static const String AppIcon = "assets/images/appIcon.png";
+  static const String appIcon = "assets/images/app_icon.png";
 
-  /// Assets for assetsImagesInformation Card
-  /// assets/images/Information Card.svg
-  static const String Information_Card = "assets/images/Information Card.svg";
+  static const String arrowLeft = "assets/images/arrow_left.svg";
 
-  /// Assets for assetsImagesOnBoardingImage1
-  /// assets/images/on_boarding_image_1.svg
-  static const String OnBoardingImage1 =
+  static const String emailIcon = "assets/images/email.svg";
+
+  static const String nameIcon = "assets/images/name_icon.svg";
+
+  static const String foreground = "assets/images/foreground.png";
+
+  static const String informationCard = "assets/images/Information Card.svg";
+
+  static const String onboardingButton = "assets/images/on_boarding_button.svg";
+
+  static const String onboardingImage1 =
       "assets/images/on_boarding_image_1.svg";
 
-  /// Assets for assetsImagesOnBoardingImage2
-  /// assets/images/on_boarding_image_2.svg
-  static const String OnBoardingImage2 =
+  static const String onboardingImage2 =
       "assets/images/on_boarding_image_2.svg";
 
-  /// Assets for assetsImagesOnBoardingImage3
-  /// assets/images/on_boarding_image_3.svg
-  static const String OnBoardingImage3 =
+  static const String onboardingImage3 =
       "assets/images/on_boarding_image_3.svg";
 
-  /// Assets for assetsImagesSplashViewImage
-  /// assets/images/splash_view_image.svg
-  static const String SplashViewImage = "assets/images/splash_view_image.svg";
+  static const String passwordIcon = "assets/images/Password_Icon.svg";
 
-  static const String OnBoardingButton = "assets/images/on_boarding_button.svg";
+  static const String splashImage = "assets/images/s (2).png";
+
+  static const String splashViewImage = "assets/images/splash_view_image.svg";
+
+  static const String facebook_Icon = "assets/images/facebook_Icon.svg";
+
+  static const String google_Icon = "assets/images/google_Icon.svg";
 }

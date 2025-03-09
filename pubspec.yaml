@@ -32,7 +32,10 @@ dependencies:
 
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.0
+  flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_launcher_icons: "^0.14.3"
@@ -84,11 +87,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-flutter_launcher_icons:
-  android: "launcher_icon"
+flutter_icons:
+  android: true
   ios: true
-  image_path: "assets/image/s (2).png"
-
+  image_path: "assets/images/s (2).png"
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+  adaptive_icon_background: "#3638DA"
 
 flutter_assets:
   assets_path: assets/images/
