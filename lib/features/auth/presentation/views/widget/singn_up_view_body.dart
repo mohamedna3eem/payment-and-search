@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharma_now/core/utils/button_style.dart';
@@ -6,7 +7,8 @@ import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
 import 'package:pharma_now/features/auth/presentation/views/login_view.dart';
-import 'package:pharma_now/features/auth/presentation/views/singn_up.dart';
+import 'package:pharma_now/features/auth/presentation/views/verification_view.dart';
+
 import 'package:pharma_now/features/auth/presentation/views/widget/custom_text_field.dart';
 
 import '../../../../../core/utils/app_images.dart';
@@ -50,9 +52,12 @@ class SingnUpBody extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyles.primaryButton,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                  context, VerificationView.routeName);
+            },
             child: Text(
-              'Sign In',
+              'Sign Up',
               style: TextStyles.buttonLabel,
             ),
           ),
@@ -93,7 +98,8 @@ class SingnUpBody extends StatelessWidget {
                       Navigator.pushReplacementNamed(
                           context, LoginView.routeName);
                     },
-                    child: Text(' Login', style: TextStyles.callToActionSignUP),
+                    child:
+                        Text(' Sign in', style: TextStyles.callToActionSignUP),
                   ),
                   SizedBox(
                     height: 8.h,

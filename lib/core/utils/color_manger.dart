@@ -10,4 +10,6 @@ class ColorManager {
   static const Color textInputColor = Color(0xFF7F8DA1);
   static const Color redColor = Color(0xFFFF0000);
   static const Color colorLines = Color(0xFFEDF1F3);
+  static const Color colorOfArrows = Color(0xFF667387);
+  static const Color colorOfsecondPopUp = Color(0xFF718096);
 }

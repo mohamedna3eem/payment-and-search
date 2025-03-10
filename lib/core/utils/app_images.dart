@@ -33,4 +33,10 @@ class Assets {
   static const String facebook_Icon = "assets/images/facebook_Icon.svg";
 
   static const String google_Icon = "assets/images/google_Icon.svg";
+
+  static const String imageOfVerification =
+      "assets/images/imageOfVerification.png";
+
+  static const String badgeCheck = "assets/images/badge-check.svg";
+  static const String forget_password = "assets/images/forget_password.svg";
 }

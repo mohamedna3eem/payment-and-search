@@ -73,4 +73,16 @@ class TextStyles {
       fontFamily: 'Inter',
       fontWeight: FontWeight.w600,
       color: Color(0xFF4D81E7));
+
+  static TextStyle mainTextOfPopUp = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: ColorManager.blackColor,
+  );
+
+  static TextStyle secdaryTextOfPopUp = TextStyle(
+      fontSize: 14.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.normal,
+      color: ColorManager.colorOfsecondPopUp);
 }

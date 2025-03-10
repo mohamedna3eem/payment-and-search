@@ -132,7 +132,10 @@ class _OnboardingViewState extends State<OnboardingView> {
           Visibility(
             visible: _currentPage != 0,
             child: InkWell(
-              child: SvgPicture.asset(Assets.arrowLeft),
+              child: SvgPicture.asset(
+                Assets.arrowLeft,
+                color: ColorManager.colorOfArrows,
+              ),
               onTap: () => _pageController.animateToPage(
                 --_currentPage,
                 duration: const Duration(milliseconds: 500),

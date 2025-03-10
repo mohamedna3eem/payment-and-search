@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
-import 'package:pharma_now/features/auth/presentation/views/singn_up.dart';
+import 'package:pharma_now/features/auth/presentation/views/forget_password_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/custom_text_field.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/singn_up_view_body.dart';
 
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/button_style.dart';
+import '../../../../../core/widgets/bottom_pop_up.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -28,7 +31,7 @@ class LoginViewBody extends StatelessWidget {
           CustomTextField(
             lable: 'Password',
             icon: Assets.passwordIcon,
-            hint: 'Enter your pasword',
+            hint: 'Enter your password',
             isPassword: true,
           ),
           SizedBox(
@@ -38,7 +41,10 @@ class LoginViewBody extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: InkWell(
               splashColor: ColorManager.colorLines,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacementNamed(
+                    context, ForgetPasswordView.routeName);
+              },
               child: Text(
                 'Forgot Password?',
                 style: TextStyles.forgetPassword,
@@ -50,7 +56,8 @@ class LoginViewBody extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyles.primaryButton,
-            onPressed: () {},
+            onPressed: () => showSuccessBottomSheet(
+                context, 'You have signed in successfully'),
             child: Text(
               'Sign In',
               style: TextStyles.buttonLabel,
@@ -90,8 +97,21 @@ class LoginViewBody extends StatelessWidget {
                   InkWell(
                     splashColor: ColorManager.colorLines,
                     onTap: () {
-                      Navigator.pushReplacementNamed(
-                          context, SingnUpView.routeName);
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  SingnUpView(),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            return FadeTransition(
+                              opacity: animation,
+                              child: child,
+                            );
+                          },
+                        ),
+                      );
                     },
                     child:
                         Text(' Sign Up', style: TextStyles.callToActionSignUP),

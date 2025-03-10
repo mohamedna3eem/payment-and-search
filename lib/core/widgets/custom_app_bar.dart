@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:pharma_now/core/utils/app_images.dart';
 import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 
 // AppBar buildAppBar({
 //   required String title,
@@ -31,14 +33,26 @@ import 'package:pharma_now/core/utils/text_style.dart';
 // }
 
 class PharmaAppBar extends StatelessWidget {
-  const PharmaAppBar({super.key, required this.title, this.isBack = false});
+  const PharmaAppBar(
+      {super.key, required this.title, this.isBack = false, this.onPressed});
   final String title;
   final bool isBack;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: isBack,
+      leading: isBack
+          ? IconButton(
+              icon: SvgPicture.asset(
+                Assets.arrowLeft,
+                width: 24,
+                height: 24,
+                color: ColorManager.colorOfArrows,
+              ),
+              onPressed: onPressed)
+          : null,
       backgroundColor: ColorManager.primaryColor,
       centerTitle: true,
       title: Text(title),
