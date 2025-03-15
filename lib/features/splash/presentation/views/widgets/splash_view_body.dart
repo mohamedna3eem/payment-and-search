@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/constants.dart';
 import 'package:pharma_now/core/services/shard_preferences_singlton.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
-import 'package:pharma_now/features/auth/presentation/views/login_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
 
 import '../../../../on_boarding/presentation/views/onboarding_view.dart';
 
@@ -52,7 +52,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool isOnBoardingViewSeen = prefs.getBool(kIsOnBoardingViewSeen);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingViewSeen) {
-        Navigator.pushReplacementNamed(context, LoginView.routeName);
+        Navigator.pushReplacementNamed(context, SignInView.routeName);
       } else {
         Navigator.pushReplacementNamed(context, OnboardingView.routeName);
       }

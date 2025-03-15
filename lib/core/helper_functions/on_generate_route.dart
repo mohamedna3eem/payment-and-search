@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_now/features/auth/presentation/views/login_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/forget_password_view_body.dart';
 import 'package:pharma_now/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/auth/presentation/views/forget_password_view.dart';
-import '../../features/auth/presentation/views/verification_view.dart';
+import '../../features/auth/presentation/views/verification_view_signup.dart';
 import '../../features/on_boarding/presentation/views/onboarding_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
@@ -16,8 +16,8 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case OnboardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnboardingView());
 
-    case LoginView.routeName:
-      return MaterialPageRoute(builder: (context) => const LoginView());
+    case SignInView.routeName:
+      return MaterialPageRoute(builder: (context) => const SignInView());
 
     case SingnUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SingnUpView());

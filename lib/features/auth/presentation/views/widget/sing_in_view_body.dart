@@ -5,17 +5,18 @@ import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
+import 'package:pharma_now/features/auth/presentation/views/Reset_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/forget_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
-import 'package:pharma_now/features/auth/presentation/views/widget/custom_text_field.dart';
+import 'package:pharma_now/core/widgets/custom_text_field.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/singn_up_view_body.dart';
 
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/button_style.dart';
 import '../../../../../core/widgets/bottom_pop_up.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SiginViewBody extends StatelessWidget {
+  const SiginViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:pharma_now/features/auth/presentation/views/verification_view_forget_password.dart';
 import 'package:pharma_now/features/auth/presentation/views/verification_view_signup.dart';
 import 'package:pharma_now/core/widgets/custom_text_field.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/verification_view_body_forgetPassword.dart';
@@ -11,44 +10,39 @@ import '../../../../../core/utils/button_style.dart';
 import '../../../../../core/utils/text_style.dart';
 import '../../../../../core/widgets/bottom_pop_up.dart';
 
-class ForgetPasswordViewBody extends StatelessWidget {
-  const ForgetPasswordViewBody({super.key});
+class ResetPasswordViewBody extends StatelessWidget {
+  const ResetPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 42.h),
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: SvgPicture.asset(
-              Assets.forget_password,
-              width: 370.w,
-              height: 240.h,
-            ),
+          CustomTextField(
+            lable: 'Password',
+            icon: Assets.passwordIcon,
+            hint: 'Enter your pasword',
+            isPassword: true,
           ),
           SizedBox(
-            height: 67.h,
+            height: 16.h,
           ),
           CustomTextField(
-              lable: 'Enter your email to receive code!',
-              icon: Assets.emailIcon,
-              hint: 'Enter your email'),
+            lable: 'Confirm Password',
+            icon: Assets.passwordIcon,
+            hint: 'Enter your pasword',
+            isPassword: true,
+          ),
           SizedBox(
-            height: 40.h,
+            height: 32.h,
           ),
           ElevatedButton(
             style: ButtonStyles.primaryButton,
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => VerifiViewForgetpassword()),
-              );
-            },
+            onPressed: () => showSuccessBottomSheet(
+                context, 'Password has been successfully changed'),
             child: Text(
-              'Send Code',
+              'Reset',
               style: TextStyles.buttonLabel,
             ),
           ),

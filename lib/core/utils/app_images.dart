@@ -39,4 +39,6 @@ class Assets {
 
   static const String badgeCheck = "assets/images/badge-check.svg";
   static const String forget_password = "assets/images/forget_password.svg";
+  static const String verification_image =
+      "assets/images/verification_image.svg";
 }

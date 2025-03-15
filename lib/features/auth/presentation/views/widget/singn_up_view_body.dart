@@ -6,10 +6,10 @@ import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
-import 'package:pharma_now/features/auth/presentation/views/login_view.dart';
-import 'package:pharma_now/features/auth/presentation/views/verification_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/verification_view_signup.dart';
 
-import 'package:pharma_now/features/auth/presentation/views/widget/custom_text_field.dart';
+import 'package:pharma_now/core/widgets/custom_text_field.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
@@ -96,7 +96,7 @@ class SingnUpBody extends StatelessWidget {
                     splashColor: ColorManager.colorLines,
                     onTap: () {
                       Navigator.pushReplacementNamed(
-                          context, LoginView.routeName);
+                          context, SignInView.routeName);
                     },
                     child:
                         Text(' Sign in', style: TextStyles.callToActionSignUP),

@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/constants.dart';
 import 'package:pharma_now/core/services/shard_preferences_singlton.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
-import 'package:pharma_now/features/auth/presentation/views/login_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
 
 import '../../../../core/utils/color_manger.dart';
 import '../../../../core/utils/text_style.dart';
@@ -146,7 +146,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           TextButton(
             onPressed: () {
               prefs.setBool(kIsOnBoardingViewSeen, true);
-              Navigator.pushReplacementNamed(context, LoginView.routeName);
+              Navigator.pushReplacementNamed(context, SignInView.routeName);
             },
             child: Text(
               'Skip',
@@ -249,7 +249,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               onTap: () {
                 if (_currentPage == _onboardingData.length - 1) {
                   prefs.setBool(kIsOnBoardingViewSeen, true);
-                  Navigator.pushReplacementNamed(context, LoginView.routeName);
+                  Navigator.pushReplacementNamed(context, SignInView.routeName);
                   // Set isSeen to true
                 } else {
                   _pageController.animateToPage(
