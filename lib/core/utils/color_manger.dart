@@ -12,4 +12,11 @@ class ColorManager {
   static const Color colorLines = Color(0xFFEDF1F3);
   static const Color colorOfArrows = Color(0xFF667387);
   static const Color colorOfsecondPopUp = Color(0xFF718096);
+  static const Color greenColor = Color(0xFF20B83A);
+  static const Color redColorF5 = Color(0xFFF56565);
+  static const Color greyColorC6 = Color(0xFF2F4F9);
+  static const Color lightPurpleColorF5 = Color(0xFFA9ABD5);
+  static const Color lightBlueColorF5C = Color(0xFFC5E9FF);
+  static const Color lightGreenColorF5C = Color(0xFFCDF6E7);
+  static const Color buttom_info = Color(0xFFF7FAFF);
 }

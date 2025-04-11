@@ -5,11 +5,12 @@ import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
-import 'package:pharma_now/features/auth/presentation/views/Reset_password_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/reset_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/forget_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/core/widgets/custom_text_field.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/singn_up_view_body.dart';
+import 'package:pharma_now/features/home/presentation/views/home.dart';
 
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/button_style.dart';
@@ -57,8 +58,9 @@ class SiginViewBody extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyles.primaryButton,
-            onPressed: () => showSuccessBottomSheet(
-                context, 'You have signed in successfully'),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, HomeView.routeName);
+            },
             child: Text(
               'Sign In',
               style: TextStyles.buttonLabel,
@@ -118,7 +120,7 @@ class SiginViewBody extends StatelessWidget {
                         Text(' Sign Up', style: TextStyles.callToActionSignUP),
                   ),
                   SizedBox(
-                    height: 8.h,
+                    height: 8,
                   )
                 ],
               )

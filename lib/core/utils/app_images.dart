@@ -38,7 +38,32 @@ class Assets {
       "assets/images/imageOfVerification.png";
 
   static const String badgeCheck = "assets/images/badge-check.svg";
+
   static const String forget_password = "assets/images/forget_password.svg";
+
   static const String verification_image =
       "assets/images/verification_image.svg";
+
+  static const String shoppingCartIcon = "assets/images/shoppingCartIcon.svg";
+
+  static const String notificationsIcon = "assets/images/notificationsIcon.svg";
+
+  static const String searchIcon = "assets/images/searchIcon.svg";
+
+  static const String profile = "assets/images/profile.png";
+
+  static const String underline = "assets/images/underline.svg";
+
+  static const String shopping_cart = "assets/images/shopping_cart.svg";
+
+  static const String home_bannner = "assets/images/banner.png";
+
+  static const String item = "assets/images/product.png";
+
+  static const String cart = "assets/images/cart.svg";
+
+  static const String gold_banner = "assets/images/gold_banner.svg";
+  static const String fav = "assets/images/favorite_off.svg";
+  static const String nFav = "assets/images/gold_banner.svg";
+  static const String bannerNewProduct = "assets/images/bannerNewProduct.svg";
 }

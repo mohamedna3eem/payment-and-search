@@ -16,43 +16,45 @@ class ForgetPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: SvgPicture.asset(
-              Assets.forget_password,
-              width: 370.w,
-              height: 240.h,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: SvgPicture.asset(
+                Assets.forget_password,
+                width: 370.w,
+                height: 240.h,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 67.h,
-          ),
-          CustomTextField(
-              lable: 'Enter your email to receive code!',
-              icon: Assets.emailIcon,
-              hint: 'Enter your email'),
-          SizedBox(
-            height: 40.h,
-          ),
-          ElevatedButton(
-            style: ButtonStyles.primaryButton,
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => VerifiViewForgetpassword()),
-              );
-            },
-            child: Text(
-              'Send Code',
-              style: TextStyles.buttonLabel,
+            SizedBox(
+              height: 67.h,
             ),
-          ),
-        ],
+            CustomTextField(
+                lable: 'Enter your email to receive code!',
+                icon: Assets.emailIcon,
+                hint: 'Enter your email'),
+            SizedBox(
+              height: 40.h,
+            ),
+            ElevatedButton(
+              style: ButtonStyles.primaryButton,
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => VerifiViewForgetpassword()),
+                );
+              },
+              child: Text(
+                'Send Code',
+                style: TextStyles.buttonLabel,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

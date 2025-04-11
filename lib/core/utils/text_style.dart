@@ -85,4 +85,34 @@ class TextStyles {
       fontFamily: 'Inter',
       fontWeight: FontWeight.normal,
       color: ColorManager.colorOfsecondPopUp);
+
+  static TextStyle bold24Black = TextStyle(
+      fontSize: 20.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w900,
+      color: ColorManager.blackColor);
+
+  static TextStyle inputLabel = TextStyle(
+      fontSize: 16.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.normal,
+      color: ColorManager.blackColor);
+
+  static TextStyle sectionTitle = TextStyle(
+      fontSize: 16.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w600,
+      color: ColorManager.blackColor);
+
+  static TextStyle listView_product_name = TextStyle(
+      fontSize: 14.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w500,
+      color: ColorManager.blackColor);
+
+  static TextStyle listView_product_subInf = TextStyle(
+      fontSize: 12.sp,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w400,
+      color: Color(0xFFB8C0CB));
 }

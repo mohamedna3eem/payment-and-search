@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharma_now/core/widgets/custom_app_bar.dart';
-import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/Reset_password_view.dart';
+import 'package:pharma_now/features/auth/presentation/views/forget_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/verification_view_body_forgetPassword.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/verification_view_body_signup.dart';
 
@@ -21,7 +22,8 @@ class VerifiViewForgetpassword extends StatelessWidget {
           title: 'Verification',
           isBack: true,
           onPressed: () {
-            Navigator.pushReplacementNamed(context, SingnUpView.routeName);
+            Navigator.pushReplacementNamed(
+                context, ForgetPasswordView.routeName);
           },
         ),
       ),

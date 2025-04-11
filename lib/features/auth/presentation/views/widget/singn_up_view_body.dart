@@ -20,7 +20,7 @@ class SingnUpBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
         child: Column(children: [
           CustomTextField(
               lable: 'Name', icon: Assets.nameIcon, hint: 'Enter your name'),
@@ -80,7 +80,7 @@ class SingnUpBody extends StatelessWidget {
             icon: Assets.facebook_Icon,
           ),
           SizedBox(
-            height: 40.h,
+            height: 24.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +102,7 @@ class SingnUpBody extends StatelessWidget {
                         Text(' Sign in', style: TextStyles.callToActionSignUP),
                   ),
                   SizedBox(
-                    height: 8.h,
+                    height: 24.h,
                   )
                 ],
               )

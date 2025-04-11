@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharma_now/features/auth/presentation/views/Reset_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/forget_password_view_body.dart';
@@ -6,7 +7,15 @@ import 'package:pharma_now/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/verification_view_signup.dart';
+import '../../features/favorites/presentation/views/favorites.dart';
+import '../../features/home/presentation/views/home.dart';
+import '../../features/new products/presentation/views/new_products_view.dart';
+import '../../features/notifications/presentation/views/notification_view.dart';
+import '../../features/offers/presentation/views/offers_view.dart';
 import '../../features/on_boarding/presentation/views/onboarding_view.dart';
+import '../../features/profile/presentation/views/profile_view.dart';
+import '../../features/search/presentation/views/search_view.dart';
+import '../../features/shopping by category/presentation/views/categories_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
   switch (setting.name) {
@@ -24,6 +33,33 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
 
     case VerificationView.routeName:
       return MaterialPageRoute(builder: (context) => const VerificationView());
+
+    case ResetPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => const ResetPasswordView());
+
+    case HomeView.routeName:
+      return MaterialPageRoute(builder: (context) => const HomeView());
+
+    case FavoriteView.routeName:
+      return MaterialPageRoute(builder: (context) => const FavoriteView());
+
+    case NewProductView.routeName:
+      return MaterialPageRoute(builder: (context) => const NewProductView());
+
+    case NotificationView.routeName:
+      return MaterialPageRoute(builder: (context) => const NotificationView());
+
+    case OffersView.routeName:
+      return MaterialPageRoute(builder: (context) => const OffersView());
+
+    case SearchView.routeName:
+      return MaterialPageRoute(builder: (context) => const SearchView());
+
+    case CategoriesView.routeName:
+      return MaterialPageRoute(builder: (context) => const CategoriesView());
+
+    case ProfileView.routeName:
+      return MaterialPageRoute(builder: (context) => const ProfileView());
 
     case ForgetPasswordView.routeName:
       return MaterialPageRoute(

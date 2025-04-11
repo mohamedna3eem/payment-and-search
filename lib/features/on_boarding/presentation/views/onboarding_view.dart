@@ -24,7 +24,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     OnboardingData(
       title: 'About us',
       description:
-          'PharmaNow application helps people to find medicine and \n medical cosmetic products at reasonable prices and also provides daily and weekly offers on products',
+          'PharmaNow application helps people to find medicine and  medical cosmetic products at reasonable prices and also provides daily and weekly offers on products',
       imagePath: Assets.onboardingImage1,
     ),
     OnboardingData(
@@ -50,87 +50,86 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   @override
   Widget build(BuildContext context) {
-    // Get screen dimensions for responsive calculations
-    final Size screenSize = MediaQuery.of(context).size;
-    final double screenHeight = screenSize.height;
-    final double screenWidth = screenSize.width;
-    final bool isSmallScreen = screenHeight < 700;
     return Scaffold(
       backgroundColor: ColorManager.primaryColor,
       body: SafeArea(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      _buildCard(),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            PageView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: _pageController,
-              onPageChanged: (value) {
-                setState(() {
-                  _currentPage = value;
-                });
-              },
-              itemCount: _onboardingData.length,
-              itemBuilder: (context, index) => _buildPage(
+        child: LayoutBuilder(builder: (context, constraints) {
+          // Get responsive dimensions based on screen constraints
+          final height = constraints.maxHeight;
+          final width = constraints.maxWidth;
+
+          return Stack(
+            children: [
+              Column(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        _buildCard(),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              PageView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: (value) {
+                  setState(() {
+                    _currentPage = value;
+                  });
+                },
+                itemCount: _onboardingData.length,
+                itemBuilder: (context, index) => _buildPage(
                   _onboardingData[index],
-                  screenHeight,
-                  screenWidth,
-                  isSmallScreen),
-            )
-          ],
-        ),
+                  height,
+                  width,
+                ),
+              )
+            ],
+          );
+        }),
       ),
     );
   }
 
-  Widget _buildPage(OnboardingData onboardingData, double screenHeight,
-      double screenWidth, bool isSmallScreen) {
+  Widget _buildPage(
+      OnboardingData onboardingData, double height, double width) {
+    // Use proportional spacing for consistent appearance across screen sizes
+    final verticalSpacing = height * 0.03;
+    final imageHeight = height * 0.35;
+
     return Column(
       children: [
-        _topBar(),
-        SizedBox(
-          height:
-              screenHeight * 0.06, // Responsive spacing (6% of screen height)
-        ),
+        _topBar(width),
+        SizedBox(height: verticalSpacing * 2),
         SvgPicture.asset(
           onboardingData.imagePath,
-          height: isSmallScreen
-              ? screenHeight * 0.3
-              : screenHeight * 0.35, // Responsive image size
-          width: screenWidth * 0.8, // 80% of screen width
+          height: imageHeight,
+          width: width * 0.8,
           fit: BoxFit.contain,
         ),
-        SizedBox(
-          height:
-              screenHeight * 0.092, // Responsive spacing (4% of screen height)
-        ),
-        _buildInfoWidget(onboardingData, screenHeight)
+        SizedBox(height: verticalSpacing * 3),
+        _buildInfoWidget(onboardingData, height, width)
       ],
     );
   }
 
-  Widget _topBar() {
+  Widget _topBar(double width) {
+    // Use fractional values for consistent spacing
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal:
-            MediaQuery.of(context).size.width * 0.04, // 4% of screen width
-        vertical:
-            MediaQuery.of(context).size.height * 0.02, // 2% of screen height
+        horizontal: width * 0.04,
+        vertical: 16,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Visibility(
             visible: _currentPage != 0,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
             child: InkWell(
               child: SvgPicture.asset(
                 Assets.arrowLeft,
@@ -175,16 +174,15 @@ class _OnboardingViewState extends State<OnboardingView> {
     );
   }
 
-  Widget _buildInfoWidget(OnboardingData onboardingData, double screenHeight) {
-    bool isSmallScreen = screenHeight < 700;
+  Widget _buildInfoWidget(
+      OnboardingData onboardingData, double height, double width) {
+    // Calculate spacing based on screen height for consistent proportions
+    final verticalSpacing = height * 0.02;
 
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal:
-            MediaQuery.of(context).size.width * 0.033, // 6% of screen width
-        vertical: isSmallScreen
-            ? 12
-            : 24, // Adjust vertical padding based on screen size
+        horizontal: width * 0.05,
+        vertical: verticalSpacing,
       ),
       child: Center(
         child: Column(
@@ -195,28 +193,18 @@ class _OnboardingViewState extends State<OnboardingView> {
               style: TextStyles.title,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: isSmallScreen
-                  ? 12
-                  : 24, // Adjust spacing based on screen size
-            ),
+            SizedBox(height: verticalSpacing),
             Container(
               constraints: BoxConstraints(
-                maxWidth: MediaQuery.of(context).size.width *
-                    1, // 80% of screen width
+                maxWidth: width * 0.9,
               ),
               child: Text(
                 onboardingData.description,
                 style: TextStyles.description,
-                maxLines: 3, // Allow one more line on smaller screens
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(
-              height: isSmallScreen
-                  ? 12
-                  : 24, // Adjust spacing based on screen size
-            ),
+            SizedBox(height: verticalSpacing),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _onboardingData
@@ -239,18 +227,13 @@ class _OnboardingViewState extends State<OnboardingView> {
                   )
                   .toList(),
             ),
-            SizedBox(
-              height: isSmallScreen
-                  ? 12
-                  : 24, // Adjust spacing based on screen size
-            ),
+            SizedBox(height: verticalSpacing),
             GestureDetector(
               child: SvgPicture.asset(Assets.onboardingButton),
               onTap: () {
                 if (_currentPage == _onboardingData.length - 1) {
                   prefs.setBool(kIsOnBoardingViewSeen, true);
                   Navigator.pushReplacementNamed(context, SignInView.routeName);
-                  // Set isSeen to true
                 } else {
                   _pageController.animateToPage(
                     ++_currentPage,
