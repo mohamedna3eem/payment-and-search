@@ -7,14 +7,10 @@ import 'package:pharma_now/features/favorites/presentation/views/favorites.dart'
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/color_manger.dart';
 
-// Dummy classes to replace imported dependencies
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
-
-// Dummy classes to replace imported dependencies
 
 class NewProductsListViewItem extends StatelessWidget {
   final int index;

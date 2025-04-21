@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pharma_now/core/utils/color_manger.dart';
 import 'package:pharma_now/core/utils/text_style.dart';
 import 'package:pharma_now/core/widgets/or_divider.dart';
 import 'package:pharma_now/core/widgets/anotherStepLogin.dart';
-import 'package:pharma_now/features/auth/presentation/views/reset_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/forget_password_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/core/widgets/custom_text_field.dart';
-import 'package:pharma_now/features/auth/presentation/views/widget/singn_up_view_body.dart';
-import 'package:pharma_now/features/home/presentation/views/home.dart';
+import 'package:pharma_now/features/home/presentation/views/home_view.dart';
 
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/button_style.dart';
-import '../../../../../core/widgets/bottom_pop_up.dart';
 
 class SiginViewBody extends StatelessWidget {
   const SiginViewBody({super.key});

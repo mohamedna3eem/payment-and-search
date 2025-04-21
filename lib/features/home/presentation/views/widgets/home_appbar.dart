@@ -70,13 +70,9 @@ class HomeAppbar extends StatelessWidget {
             backgroundImage: AssetImage('assets/images/profile.png'),
           ),
           elevation: 0,
-          title: InkWell(
-            onTap: () => Navigator.pushReplacementNamed(
-                context, CategoriesView.routeName),
-            child: Text(
-              'Hello Abo Waly 👋',
-              style: TextStyles.description,
-            ),
+          title: Text(
+            'Hello Abo Waly 👋',
+            style: TextStyles.description,
           ),
           actions: [
             SizedBox(

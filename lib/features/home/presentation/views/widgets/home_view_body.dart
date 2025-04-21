@@ -3,13 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
 import 'package:pharma_now/features/home/presentation/views/widgets/category_widget.dart';
-import 'package:pharma_now/features/home/presentation/views/widgets/new%20_products_list_view.dart';
+import 'package:pharma_now/features/home/presentation/views/widgets/new%20_products_list_view_item.dart';
+import 'package:pharma_now/features/home/presentation/views/product_view.dart';
 import 'package:pharma_now/features/home/presentation/views/widgets/section_widget.dart';
 import 'package:pharma_now/features/home/presentation/views/widgets/offers_list_view_item.dart';
+import 'package:pharma_now/features/new%20products/presentation/views/new_products_view.dart';
+import 'package:pharma_now/features/offers/presentation/views/offers_view.dart';
 
 import '../../../../../core/utils/button_style.dart';
 import '../../../../../core/utils/color_manger.dart';
 import '../../../../../core/utils/text_style.dart';
+import '../../../../shopping by category/presentation/views/categories_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -58,11 +62,28 @@ class HomeViewBody extends StatelessWidget {
                 )
               ],
             ),
-            SectionWidget(sectionTitle: 'Categories'),
+            SectionWidget(
+              sectionTitle: 'Categories',
+              onTap: () {
+                Navigator.pushReplacementNamed(
+                    context, CategoriesView.routeName);
+              },
+            ),
             _buildCategoriesList(),
-            SectionWidget(sectionTitle: 'Offers'),
+            SectionWidget(
+              sectionTitle: 'Offers',
+              onTap: () {
+                Navigator.pushReplacementNamed(context, OffersView.routeName);
+              },
+            ),
             _buildOffersList(),
-            SectionWidget(sectionTitle: 'New Products'),
+            SectionWidget(
+              sectionTitle: 'New Products',
+              onTap: () {
+                Navigator.pushReplacementNamed(
+                    context, NewProductView.routeName);
+              },
+            ),
             _buildNewProductsList(),
             SizedBox(
               height: 48,
@@ -98,6 +119,9 @@ class HomeViewBody extends StatelessWidget {
         itemBuilder: (context, index) => OffersListViewItem(
           index: index,
           isFavorite: true,
+          onTap: () {
+            Navigator.pushReplacementNamed(context, ProductView.routeName);
+          },
           onFavoritePressed:
               () {}, // You'll need to provide actual product data here
         ),

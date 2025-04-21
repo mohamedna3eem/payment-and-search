@@ -5,7 +5,7 @@ import 'package:pharma_now/features/notifications/presentation/views/widgets/not
 
 import '../../../../core/utils/color_manger.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../home/presentation/views/home.dart';
+import '../../../home/presentation/views/home_view.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key});

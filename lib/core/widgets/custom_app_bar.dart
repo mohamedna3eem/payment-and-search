@@ -42,6 +42,9 @@ class PharmaAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      shadowColor: ColorManager.primaryColor,
+      foregroundColor: ColorManager.primaryColor,
+      surfaceTintColor: ColorManager.primaryColor,
       automaticallyImplyLeading: isBack,
       leading: isBack
           ? IconButton(

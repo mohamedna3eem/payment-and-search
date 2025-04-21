@@ -6,15 +6,13 @@ import 'package:pharma_now/core/utils/app_images.dart';
 import '../../../../../core/utils/color_manger.dart';
 import '../../../../../core/utils/text_style.dart';
 
-// Dummy classes to replace imported dependencies
-
-class OffersListViewItem extends StatelessWidget {
+class RelatedProudcutListViewItem extends StatelessWidget {
   final int index;
   final bool isFavorite;
   final VoidCallback onFavoritePressed;
   final Function()? onTap;
 
-  const OffersListViewItem(
+  const RelatedProudcutListViewItem(
       {super.key,
       required this.index,
       required this.isFavorite,
@@ -66,8 +64,8 @@ class OffersListViewItem extends StatelessWidget {
                             // 1. The SVG Banner
                             SvgPicture.asset(
                               Assets.gold_banner,
-                              height: 24.h,
-                              width: 48.w,
+                              height: 24,
+                              width: 48,
                             ),
 
                             Padding(

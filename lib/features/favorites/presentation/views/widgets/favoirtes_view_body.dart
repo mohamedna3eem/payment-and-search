@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProfileViewBody extends StatelessWidget {
-  const ProfileViewBody({super.key});
+class FavoriteViewBody extends StatelessWidget {
+  const FavoriteViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

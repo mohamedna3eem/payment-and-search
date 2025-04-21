@@ -63,7 +63,7 @@ class Assets {
   static const String cart = "assets/images/cart.svg";
 
   static const String gold_banner = "assets/images/gold_banner.svg";
-  static const String fav = "assets/images/favorite_off.svg";
-  static const String nFav = "assets/images/gold_banner.svg";
+  static const String fav = "assets/images/favorite.svg";
+  static const String nFav = "assets/images/favorite_off.svg";
   static const String bannerNewProduct = "assets/images/bannerNewProduct.svg";
 }

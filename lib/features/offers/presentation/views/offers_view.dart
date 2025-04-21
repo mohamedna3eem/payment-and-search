@@ -4,7 +4,7 @@ import 'package:pharma_now/features/offers/presentation/views/widgets/offers_vie
 
 import '../../../../core/utils/color_manger.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../home/presentation/views/home.dart';
+import '../../../home/presentation/views/home_view.dart';
 
 class OffersView extends StatelessWidget {
   const OffersView({super.key});

@@ -57,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
             color: ColorManager.secondaryColor,
             buttonBackgroundColor: ColorManager.secondaryColor,
             backgroundColor: Colors.transparent,
-            height: 60,
+            height: 58,
             animationCurve: Curves.bounceInOut,
             animationDuration: const Duration(milliseconds: 400),
             index: _currentIndex,
