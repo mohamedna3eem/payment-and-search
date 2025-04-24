@@ -98,6 +98,7 @@ class EditProfile extends StatelessWidget {
                 ),
                 SizedBox(height: 0.01 * height),
                 CustomTextField(
+                    textInputType: TextInputType.name,
                     lable: 'Name',
                     icon: Assets.nameIcon,
                     hint: 'Enter your name'),
@@ -105,6 +106,7 @@ class EditProfile extends StatelessWidget {
                   height: 16,
                 ),
                 CustomTextField(
+                    textInputType: TextInputType.emailAddress,
                     lable: 'Email',
                     icon: Assets.emailIcon,
                     hint: 'Enter your email'),

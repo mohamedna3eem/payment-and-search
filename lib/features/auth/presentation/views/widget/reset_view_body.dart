@@ -20,6 +20,7 @@ class ResetPasswordViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomTextField(
+            textInputType: TextInputType.visiblePassword,
             lable: 'Password',
             icon: Assets.passwordIcon,
             hint: 'Enter your pasword',
@@ -29,6 +30,7 @@ class ResetPasswordViewBody extends StatelessWidget {
             height: 16.h,
           ),
           CustomTextField(
+            textInputType: TextInputType.visiblePassword,
             lable: 'Confirm Password',
             icon: Assets.passwordIcon,
             hint: 'Enter your pasword',

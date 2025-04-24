@@ -11,12 +11,15 @@ class CustomTextField extends StatelessWidget {
       required this.lable,
       required this.icon,
       required this.hint,
-      this.isPassword = false});
+      this.isPassword = false,
+      this.onSaved,
+      required this.textInputType});
   final String lable;
   final String icon;
   final String hint;
   final bool? isPassword;
-
+  final TextInputType textInputType;
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,6 +37,17 @@ class CustomTextField extends StatelessWidget {
           height: 8.h,
         ),
         TextFormField(
+          keyboardType: textInputType,
+          onSaved: onSaved,
+          validator: (value) {
+            validator:
+            (value) {
+              if (value == null || value.isEmpty) {
+                return 'The field cannot be empty';
+              }
+              return null;
+            };
+          },
           obscureText: isPassword == true,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
