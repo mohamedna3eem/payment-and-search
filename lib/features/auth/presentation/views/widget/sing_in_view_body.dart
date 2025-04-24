@@ -22,11 +22,15 @@ class SiginViewBody extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
         child: Column(children: [
           CustomTextField(
-              lable: 'Email', icon: Assets.emailIcon, hint: 'Enter your email'),
+              textInputType: TextInputType.emailAddress,
+              lable: 'Email',
+              icon: Assets.emailIcon,
+              hint: 'Enter your email'),
           SizedBox(
             height: 16,
           ),
           CustomTextField(
+            textInputType: TextInputType.visiblePassword,
             lable: 'Password',
             icon: Assets.passwordIcon,
             hint: 'Enter your password',
@@ -81,7 +85,7 @@ class SiginViewBody extends StatelessWidget {
             icon: Assets.facebook_Icon,
           ),
           SizedBox(
-            height: 175.h,
+            height: 150.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

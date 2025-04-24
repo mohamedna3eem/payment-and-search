@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "899708379709",
+    "project_id": "pharmanow-754a7",
+    "storage_bucket": "pharmanow-754a7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899708379709:android:c0899fc0febcd747b38054",
+        "android_client_info": {
+          "package_name": "com.example.pharma_now"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKWX44ZDBZuV9Yj_rp1kL4Ydn9HbQuzfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
