@@ -33,6 +33,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
               height: 67.h,
             ),
             CustomTextField(
+                textInputType: TextInputType.emailAddress,
                 lable: 'Enter your email to receive code!',
                 icon: Assets.emailIcon,
                 hint: 'Enter your email'),
