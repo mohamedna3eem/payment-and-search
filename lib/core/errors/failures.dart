@@ -1,8 +1,11 @@
 abstract class Failures {
   final String message;
-  Failures(this.message);
+  Failures({required this.message});
 }
 
 class ServerFailure extends Failures {
-  ServerFailure(super.message);
+  ServerFailure({required super.message});
+
+}class NetworkError extends Failures {
+  NetworkError({required super.message});
 }

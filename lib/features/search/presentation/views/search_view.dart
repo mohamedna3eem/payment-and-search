@@ -14,12 +14,12 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.primaryColor,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(48.sp),
-        child: PharmaAppBar(
-          title: 'Search',
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(48.sp),
+      //   child: PharmaAppBar(
+      //     title: 'Search',
+      //   ),
+      // ),
       body: FavoriteViewBody(),
     );
   }

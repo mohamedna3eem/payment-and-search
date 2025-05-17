@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 //   static const routeName = 'payment';
 
 import 'package:flutter/material.dart';
+import 'package:pharma_now/core/utils/color_manger.dart';
+import 'package:pharma_now/core/widgets/Custom_buttom.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  int _selectedPaymentIndex = -1; // لما يكون -1 يعني ولا واحد متحدد
+  int _selectedPaymentIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,11 @@ class _PaymentPageState extends State<PaymentPage> {
     List<String> paymentMethods = ['PayPal', 'Apple Pay', 'Google Pay', 'MasterCard'];
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: ColorManager.primaryColor,
+        centerTitle: true,
+        title: Text("Select Payment Method"),),
+      backgroundColor:ColorManager.grey50,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
@@ -30,16 +36,7 @@ class _PaymentPageState extends State<PaymentPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: height * 0.03),
-              Row(
-                children: [
-                  const Icon(Icons.arrow_back),
-                  const SizedBox(width: 8),
-                  const Text(
-                    'Select Payment Method',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+
               SizedBox(height: height * 0.03),
               const Text(
                 'Payment Option',
@@ -48,40 +45,58 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(height: 8),
               const Text(
                 'Select the payment method you want to use.',
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey,fontSize: 15,
+                fontWeight: FontWeight.bold),
               ),
               SizedBox(height: height * 0.03),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: paymentMethods.length,
-                  itemBuilder: (context, index) {
-                    return _paymentItem(paymentMethods[index], index);
-                  },
-                ),
-              ),
-              SizedBox(height: height * 0.02),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: height * 0.02),
+
+
+              Column(
+                children: [
+                  _paymentItem(title: '', index: 0, iconWidget: Image.asset("assets/images/Group.png"),
+                      onTap: (selectedIndex) {
+                        setState(() {
+                          _selectedPaymentIndex = selectedIndex;
+                        });}
+
                   ),
-                  onPressed: () {
-                    // هنا تقدر تتحكم لما المستخدم يضغط Confirm
-                    if (_selectedPaymentIndex != -1) {
-                      print('Selected Payment: ${paymentMethods[_selectedPaymentIndex]}');
-                    } else {
-                      print('No payment method selected!');
-                    }
-                  },
-                  child: const Text('Confirm', style: TextStyle(fontSize: 18)),
-                ),
+                  _paymentItem(title: '', index: 1, iconWidget: Image.asset("assets/images/apple.png"),
+                     onTap: (selectedIndex) {
+                        setState(() {
+                    _selectedPaymentIndex = selectedIndex;
+                    });}
+                  ),
+                  _paymentItem(title: '', index: 2, iconWidget: Image.asset("assets/images/google.png"),
+                     onTap: (selectedIndex) {
+                        setState(() {
+                    _selectedPaymentIndex = selectedIndex;
+                    });}
+                  ) ,_paymentItem(title: '', index: 3, iconWidget: Image.asset("assets/images/mastercard.png"),
+                     onTap: (selectedIndex) {
+                        setState(() {
+                    _selectedPaymentIndex = selectedIndex;
+                    });}
+                  )
+                ],
               ),
               SizedBox(height: height * 0.02),
+
+              CustomButton(text: "Add New One", onButtonClicked: (){},
+              buttonColor: ColorManager.grey50,
+                borderSide:   ColorManager.secondaryColor,
+                 textStyle: TextStyle(color: ColorManager.secondaryColor,
+                 fontSize: 24,
+                   fontWeight: FontWeight.normal
+                 ),
+              ),
+              SizedBox(height: height * 0.2),
+              CustomButton(text: "Confirm", onButtonClicked: (){},
+                buttonColor:ColorManager.secondaryColor ,
+                  textStyle: TextStyle(
+                    color: ColorManager.primaryColor,
+                    fontSize: 24,
+                    fontWeight: FontWeight.normal)
+              ),
             ],
           ),
         ),
@@ -89,21 +104,26 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 
-  Widget _paymentItem(String title, int index) {
+  Widget _paymentItem({required String title,required int index,required Widget  iconWidget,
+   required void Function(int)? onTap,
+    }) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedPaymentIndex = index;
-        });
-      },
+    onTap: () {
+    if (onTap != null) {
+    onTap(index);
+    } else {
+    setState(() {
+    _selectedPaymentIndex = index;
+    });
+    }},
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Color(0xFFF7F7F7),
+          color: ColorManager.primaryColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: _selectedPaymentIndex == index ? Colors.blue : Colors.transparent,
+            color: _selectedPaymentIndex == index ? ColorManager.secondaryColor : Colors.transparent,
             width: 2,
           ),
         ),
@@ -113,24 +133,24 @@ class _PaymentPageState extends State<PaymentPage> {
               width: 40,
               height: 40,
               color: Colors.grey[300],
-              child: Icon(Icons.payment),
+              child: iconWidget
             ),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
                 '•••• •••• •••• 4679',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 18),
               ),
             ),
             Icon(
               _selectedPaymentIndex == index
                   ? Icons.radio_button_checked
                   : Icons.radio_button_off,
-              color: _selectedPaymentIndex == index ? Colors.blue : Colors.grey,
+              color: _selectedPaymentIndex == index ? ColorManager.secondaryColor : Colors.grey,
             ),
           ],
         ),
-      ),
+      )
     );
   }
 }

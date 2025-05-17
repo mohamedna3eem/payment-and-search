@@ -9,6 +9,7 @@ import 'package:pharma_now/features/splash/presentation/views/splash_view.dart';
 import 'package:pharma_now/firebase_options.dart';
 
 import 'core/services/custom_bloc_observer.dart';
+import 'features/home/presentation/views/home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ void main() async {
   setupGetit();
   Bloc.observer = CustomBlocObserver();
 
-  await prefs.init();
+  // await prefs.init();
   runApp(PharmaNow());
 }
 
@@ -34,7 +35,7 @@ class PharmaNow extends StatelessWidget {
         builder: (context, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
               onGenerateRoute: onGenerateRoute,
-              initialRoute: SplashView.routeName,
+              initialRoute: HomeView.routeName,
             ));
   }
 }

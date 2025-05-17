@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
 import 'package:pharma_now/core/utils/color_manger.dart';
+import 'package:pharma_now/features/cart/presentation/views/Cart_view.dart';
 
 import '../../../../../core/utils/text_style.dart';
 import '../../../../notifications/presentation/views/notification_view.dart';
@@ -46,7 +47,12 @@ class HomeAppbar extends StatelessWidget {
             height: 24,
           )),
       callback: (BuildContext ctx) {
-        // Your second action callback
+        /// Your second action callback
+        Navigator.of(ctx).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => CartView(),
+          ),
+        );
       },
     ),
   ];

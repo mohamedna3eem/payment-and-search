@@ -19,4 +19,5 @@ class ColorManager {
   static const Color lightBlueColorF5C = Color(0xFFC5E9FF);
   static const Color lightGreenColorF5C = Color(0xFFCDF6E7);
   static const Color buttom_info = Color(0xFFF7FAFF);
+  static const Color grey50 = Color(0xFFF2F4F9);
 }

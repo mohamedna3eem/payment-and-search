@@ -144,7 +144,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           ),
           TextButton(
             onPressed: () {
-              prefs.setBool(kIsOnBoardingViewSeen, true);
+              // prefs.setBool(kIsOnBoardingViewSeen, true);
               Navigator.pushReplacementNamed(context, SignInView.routeName);
             },
             child: Text(
@@ -232,7 +232,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               child: SvgPicture.asset(Assets.onboardingButton),
               onTap: () {
                 if (_currentPage == _onboardingData.length - 1) {
-                  prefs.setBool(kIsOnBoardingViewSeen, true);
+                  // prefs.setBool(kIsOnBoardingViewSeen, true);
                   Navigator.pushReplacementNamed(context, SignInView.routeName);
                 } else {
                   _pageController.animateToPage(

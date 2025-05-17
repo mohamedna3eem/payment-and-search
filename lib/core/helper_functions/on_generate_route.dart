@@ -3,10 +3,12 @@ import 'package:pharma_now/features/auth/presentation/views/Reset_password_view.
 import 'package:pharma_now/features/auth/presentation/views/singn_in_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/singn_up_view.dart';
 import 'package:pharma_now/features/auth/presentation/views/widget/forget_password_view_body.dart';
+import 'package:pharma_now/features/cart/presentation/views/Cart_view.dart';
 import 'package:pharma_now/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/verification_view_signup.dart';
+import '../../features/cart/presentation/views/widgets/payment/payment.dart';
 import '../../features/favorites/presentation/views/favorites.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/home/presentation/views/product_view.dart';
@@ -76,6 +78,10 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case ForgetPasswordView.routeName:
       return MaterialPageRoute(
           builder: (context) => const ForgetPasswordView());
+    case CartView.routeName:
+      return MaterialPageRoute(builder: (context) => const CartView());
+      case PaymentPage.routeName:
+      return MaterialPageRoute(builder: (context) => PaymentPage());
 
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

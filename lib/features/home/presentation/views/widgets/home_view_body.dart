@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pharma_now/core/utils/app_images.dart';
@@ -26,6 +27,13 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+          ImageSlideshow(
+          width: double.infinity,
+          height: 150,
+          initialPage: 0,
+          indicatorColor: Colors .blue,
+          indicatorBackgroundColor: Colors.grey,
+          children: [
             Stack(
               children: [
                 SizedBox(
@@ -45,7 +53,7 @@ class HomeViewBody extends StatelessWidget {
                         style: TextStyles.bold24Black,
                       ),
                       Text(
-                        '50%',
+                        '30%',
                         style: TextStyles.bold24Black
                             .copyWith(color: ColorManager.redColorF5),
                       ),
@@ -62,6 +70,88 @@ class HomeViewBody extends StatelessWidget {
                 )
               ],
             ),
+            Stack(
+              children: [
+                SizedBox(
+                    width: double.infinity,
+                    child: Image.asset(
+                      Assets.home_bannner,
+                      fit: BoxFit.fill,
+                    )),
+                Positioned(
+                  top: 30,
+                  left: 42,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Discount ',
+                        style: TextStyles.bold24Black,
+                      ),
+                      Text(
+                        '30%',
+                        style: TextStyles.bold24Black
+                            .copyWith(color: ColorManager.redColorF5),
+                      ),
+                      SizedBox(),
+                      ElevatedButton(
+                          style: ButtonStyles.smallButton,
+                          onPressed: () {},
+                          child: Text(
+                            'Buy Now',
+                            style: TextStyles.buttonLabel,
+                          ))
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Stack(
+              children: [
+                SizedBox(
+                    width: double.infinity,
+                    child: Image.asset(
+                      Assets.home_bannner,
+                      fit: BoxFit.fill,
+                    )),
+                Positioned(
+                  top: 30,
+                  left: 42,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Discount ',
+                        style: TextStyles.bold24Black,
+                      ),
+                      Text(
+                        '30%',
+                        style: TextStyles.bold24Black
+                            .copyWith(color: ColorManager.redColorF5),
+                      ),
+                      SizedBox(),
+                      ElevatedButton(
+                          style: ButtonStyles.smallButton,
+                          onPressed: () {},
+                          child: Text(
+                            'Buy Now',
+                            style: TextStyles.buttonLabel,
+                          ))
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ],
+          onPageChanged: (value) {
+            print('Page changed: $value');
+          },
+          autoPlayInterval: 3000,
+          isLoop: true,
+        ),
+
+
+
             SectionWidget(
               sectionTitle: 'Categories',
               onTap: () {

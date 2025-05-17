@@ -6,8 +6,8 @@ import 'package:pharma_now/features/auth/domain/repo/auth_repo.dart';
 final getIt = GetIt.instance;
 
 void setupGetit() {
-  getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
-  getIt.registerSingleton<AuthRepo>(AuthRepoImpl(
-    firebaseAuthService: getIt<FirebaseAuthService>(),
-  ));
+  // getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
+  // getIt.registerSingleton<AuthRepo>(AuthRepoImpl(
+  //   firebaseAuthService: getIt<FirebaseAuthService>(),
+  // ));
 }
